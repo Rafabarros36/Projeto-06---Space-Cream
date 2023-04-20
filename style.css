@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --fs-body: 1.6rem;
+  --fs-heading: 4rem;
+  --lh-heading: 3.4rem;
+  --fs-card: 2rem;
+  --lh-card: 3.4rem;
+  --bg-logo: #cbc0d3;
+  --bg-card-span: #feeafa;
+
+  --ff-heading: "Staatliches";
+  --ff-texting: "Palanquin";
+  --fs-texting: 1.6rem;
+  --lh-texting: 1.5rem;
+  --bg-primary: #eff1ff;
+  --fc-primary: #ffffff;
+  --fc-secondary: #4a4e69;
+}
+
+body {
+  background: var(--bg-primary);
+  font-size: var(--fs-body);
+}
+
+.page {
+  max-width: 38.4rem;
+  margin: 0 auto;
+}
+
+header {
+  background: #8e9aaf;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3.2rem;
+}
+
+header img {
+  width: 13.7rem;
+  height: auto;
+  margin-inline: auto;
+}
+
+.logo {
+  background: var(--bg-logo);
+  margin: 3.2rem 0 2.9rem;
+}
+
+header h1 {
+  font-family: var(--ff-heading);
+  color: var(--fc-primary);
+  font-weight: 400;
+  font-size: var(--fs-heading);
+  line-height: var(--lh-heading);
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 0.8rem 8.6rem 0.7rem;
+}
+
+main {
+  display: grid;
+  gap: 3.2rem;
+}
+
+main p {
+  font-family: var(--ff-texting);
+  font-size: var(--fs-texting);
+  line-height: var(--lh-texting);
+  display: flex;
+  margin: 1.4rem 3.2rem 6rem;
+  align-items: center;
+  text-align: center;
+  font-weight: 400;
+}
+
+main h2 {
+  font-family: var(--ff-heading);
+  color: var(--fc-secondary);
+  letter-spacing: 0.05em;
+  font-size: var(--fs-card);
+  font-weight: 400;
+  line-height: var(--lh-card);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 25rem 45rem 25rem 45rem;
+  gap: 3.2rem;
+}
+
+.card {
+  position: relative;
+  margin: 0 auto;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+.card img {
+  height: 100%;
+  width: 32rem;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 200ms;
+}
+
+.card span {
+  background: var(--bg-card-span);
+  width: fit-content;
+  font-family: var(--ff-heading);
+  color: var(--fc-secondary);
+  position: absolute;
+  font-size: 2rem;
+  top: 1.6rem;
+  right: 1.6rem;
+  border-radius: 2rem;
+  padding: 0.8rem 2.3rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.card {
+  animation: downtop 1s forwards;
+}
+
+.card span {
+  animation: topdown 2s;
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
